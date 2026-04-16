@@ -1,16 +1,20 @@
 videos:
   test:
-    title: "Test Video"
-    description: "This is a test video for demonstration purposes."
-    url: "https://example.com/test-video"
-    thumbnail: "https://example.com/test-video-thumbnail.jpg"
+    title: Test Video
+    description: This is a test video for demonstration purposes.
+    url: https://example.com/test-video
+    thumbnail: https://example.com/test-video-thumbnail.jpg
     duration: 120
-    published_date: "2024-01-01"
+    published_date: '2024-01-01'
     languages:
       en:
-        url: "https://media.panchayatseva.in/embed?m=7qmmMU979"
+        url: https://media.panchayatseva.in/embed?m=7qmmMU979
       hi:
-        url: "https://media.panchayatseva.in/embed?m=7qmmMU979-hi"
+        url: https://media.panchayatseva.in/embed?m=7qmmMU979-hi
       or:
-        url: "https://media.panchayatseva.in/embed?m=7qmmMU979-or"
-    status: "active"
+        url: https://media.panchayatseva.in/embed?m=7qmmMU979-or
+    status: active
+  014_rcc_roof_type:
+    title: 014_rcc_roof_type
+    languages:
+      hi: https://media.panchayatseva.in/view?m=jSZIrgEiL
