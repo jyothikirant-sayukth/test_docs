@@ -38,3 +38,23 @@ videos:
     title: 042_complete_survey
     languages:
       hi: https://media.panchayatseva.in/view?m=AvJnzfx73
+  001_aadhaar_qr_scanning:
+    title: 001_aadhaar_qr_scanning
+    languages:
+      hi: https://media.panchayatseva.in/view?m=wnBcm7qPh
+  002_aadhaar_manual_entry:
+    title: 002_aadhaar_manual_entry
+    languages:
+      hi: https://media.panchayatseva.in/view?m=PeG1dPxHa
+  004_upload_survey_data:
+    title: 004_upload_survey_data
+    languages:
+      hi: https://media.panchayatseva.in/view?m=K2kPW5HE1
+  010_login_to_survey_app:
+    title: 010_login_to_survey_app
+    languages:
+      hi: https://media.panchayatseva.in/view?m=y0M2Wi7cm
+  013_forgot_password:
+    title: 013_forgot_password
+    languages:
+      hi: https://media.panchayatseva.in/view?m=TJly6YZkB
