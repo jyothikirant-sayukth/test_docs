@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html
+  itemscope
+  lang="{{ site.LanguageCode | default `en-US` }}"
+  itemtype="http://schema.org/WebPage">
+  <head>
+    {{ partial "essentials/head.html" . }}
+
+    {{ if hugo.IsProduction }}
+      {{ partialCached "essentials/style.html" . }}
+    {{ else }}
+      {{ partial "essentials/style.html" . }}
+    {{ end }}
+  </head>
+
+  <body>
+    {{ if hugo.IsProduction }}
+      {{ partialCached "preloader.html" . }}
+      {{ partialCached "gtm-noscript.html" . }}
+    {{ else }}
+      {{ partial "preloader.html" . }}
+      {{ partial "components/tw-size-indicator.html" . }}
+    {{ end }}
+
+    {{ partial "essentials/header.html" . }}
+    {{ partial "search-modal.html" (dict "Context" . ) }}
+
+    <main>
+      {{ block "main" . }}{{ end }}
+    </main>
+
+    {{ if hugo.IsProduction }}
+      {{ partialCached "essentials/footer.html" . }}
+      {{ partialCached "essentials/script.html" . }}
+    {{ else }}
+      {{ partial "essentials/script.html" . }}
+    {{ end }}
+  </body>
+</html>

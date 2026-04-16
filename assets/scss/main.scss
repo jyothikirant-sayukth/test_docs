@@ -1,0 +1,55 @@
+@import "base/core";
+@import "components/core";
+@import "utils/core";
+@import "pages/core";
+@import "layout/core";
+
+p {
+  @apply font-secondary break-words;
+}
+
+ol {
+	counter-reset: item;
+}
+
+ol>li {
+	display: block;
+}
+
+ol>li:before {
+	content: counters(item, ".") ". ";
+	counter-increment: item;
+}
+
+ol>li>ol>li {
+	display: block;
+}
+
+ol>li>ol>li:before {
+	content: counters(item, ".") ". ";
+	counter-increment: item;
+}
+
+nav {
+	& ol {
+		counter-reset: item;
+	}
+
+	& ol>li {
+		display: block;
+	}
+
+	& ol>li:before {
+		content: " ";
+		counter-increment: item;
+	}
+
+	& ol>li>ol>li {
+		display: block;
+	}
+
+	& ol>li>ol>li:before {
+		content: " ";
+		counter-increment: item;
+	}
+}

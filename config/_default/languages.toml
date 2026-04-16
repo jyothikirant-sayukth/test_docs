@@ -1,0 +1,115 @@
+################ English language ##################
+[en]
+languageName = "En"
+languageCode = "en-us"
+weight = 1
+
+[hi]
+languageName = "Hi"
+languageCode = "hi-IN"
+weight = 2
+
+[te]
+languageName = "Te"
+languageCode = "te-IN"
+weight = 3
+
+[ta]
+languageName = "Ta"
+languageCode = "ta-IN"
+weight = 4
+
+[kn]
+languageName = "Kn"
+languageCode = "kn-IN"
+weight = 5
+
+[ml]
+languageName = "Ml"
+languageCode = "ml-IN"
+weight = 6
+
+[mr]
+languageName = "Mr"
+languageCode = "mr-IN"
+weight = 7
+
+[gu]
+languageName = "Gu"
+languageCode = "gu-IN"
+weight = 8
+
+[pa]
+languageName = "Pa"
+languageCode = "pa-IN"
+weight = 9
+
+[bn]
+languageName = "Bn"
+languageCode = "bn-IN"
+weight = 10
+
+[or]
+languageName = "Or"
+languageCode = "or-IN"
+weight = 11
+
+[as]
+languageName = "As"
+languageCode = "as-IN"
+weight = 12
+
+[ur]
+languageName = "Ur"
+languageCode = "ur-IN"
+weight = 13
+
+[sa]
+languageName = "Sa"
+languageCode = "sa-IN"
+weight = 14
+
+[gom]
+languageName = "Go"
+languageCode = "gom-IN"
+weight = 15
+
+[mni]
+languageName = "Mn"
+languageCode = "mni-IN"
+weight = 16
+
+[brx]
+languageName = "Bo"
+languageCode = "brx-IN"
+weight = 17
+
+[doi]
+languageName = "Do"
+languageCode = "doi-IN"
+weight = 18
+
+[ks]
+languageName = "Ks"
+languageCode = "ks-IN"
+weight = 19
+
+[mai]
+languageName = "Ma"
+languageCode = "mai-IN"
+weight = 20
+
+[sat]
+languageName = "St"
+languageCode = "sat-IN"
+weight = 21
+
+[sd]
+languageName = "Sd"
+languageCode = "sd-IN"
+weight = 22
+
+[ne]
+languageName = "Ne"
+languageCode = "ne-IN"
+weight = 23

@@ -1,0 +1,28 @@
+############# English navigation ##############
+
+# main menu
+
+[[main]]
+name = "Docs"
+url = "getting-started/about/"
+weight = 1
+
+
+
+# footer menu
+[[footer_primary]]
+name = "Changelog"
+url = "changelog/"
+weight = 1
+
+
+# footer menu
+[[footer_secondary]]
+name = "Privacy Policy"
+url = "privacy-policy/"
+weight = 1
+
+[[footer_secondary]]
+name = "Terms And Conditions"
+url = "terms-conditions/"
+weight = 2

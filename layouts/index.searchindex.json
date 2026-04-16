@@ -1,0 +1,93 @@
+{{- $items := slice -}}
+{{- range site.AllPages -}}
+  {{- $isSearchPage := in (slice "page" "section") .Kind -}}
+  {{- $hasUrl := and .RelPermalink (ne .RelPermalink "/") -}}
+  {{- $sameLang := eq .Language.Lang site.Language.Lang -}}
+  {{- if and $isSearchPage $hasUrl $sameLang (not .IsHome) -}}
+    {{- $title := .LinkTitle | plainify -}}
+    {{- $content := .Plain | plainify -}}
+    {{- $description := .Description | plainify -}}
+    {{- $rawContent := .RawContent -}}
+    {{- $renderedContent := .Content -}}
+    {{- $embedMatches := findRE `https?://[^"\s]+/embed\?m=[A-Za-z0-9]+` $rawContent -}}
+    {{- $embedURL := "" -}}
+    {{- $mediaID := "" -}}
+    {{- $mediaHost := "" -}}
+    {{- if gt (len $embedMatches) 0 -}}
+      {{- $embedURL = index $embedMatches 0 -}}
+      {{- $mediaID = replaceRE `(?i).*[\?&]m=([A-Za-z0-9]+).*` "$1" $embedURL -}}
+      {{- $mediaHost = replaceRE `(?i)^(https?://[^/]+).*$` "$1" $embedURL -}}
+    {{- end -}}
+    {{- $headingMatches := findRE `(?m)^#{1,6}\s+(.+)$` $rawContent -}}
+    {{- $mdHeadings := slice -}}
+    {{- range $headingMatches -}}
+      {{- $h := replaceRE `(?m)^#{1,6}\s+(.+)$` "$1" . -}}
+      {{- $h = replaceRE `\s*\{#.*\}\s*$` "" $h -}}
+      {{- $mdHeadings = $mdHeadings | append ($h | plainify) -}}
+    {{- end -}}
+    {{- $mainHeading := "" -}}
+    {{- if gt (len $headingMatches) 0 -}}
+      {{- $mainHeading = replaceRE `(?m)^#{1,6}\s+(.+)$` "$1" (index $headingMatches 0) -}}
+      {{- $mainHeading = replaceRE `\s*\{#.*\}\s*$` "" $mainHeading -}}
+    {{- end -}}
+    {{- $videoMatches := findRE `(?i)\{\{<\s*mediacms|youtube|panchayat seva video` $rawContent -}}
+    {{- $isVideo := or (in (lower $title) "video") (in (lower .RelPermalink) "/videos") (gt (len $videoMatches) 0) -}}
+    {{- $thumb := .Params.image_sm | default .Params.image -}}
+    {{- if not $thumb -}}
+      {{- $firstImg := "" -}}
+      {{- $renderedImgMatch := findRE `(?i)<img[^>]+src="([^"]+)"` $renderedContent -}}
+      {{- if gt (len $renderedImgMatch) 0 -}}
+        {{- $firstImg = replaceRE `(?is).*src="([^"]+)".*` "$1" (index $renderedImgMatch 0) -}}
+      {{- end -}}
+      {{- $imgMatch := findRE `(?i)src="([^"]+)"` $rawContent -}}
+      {{- if and (not $firstImg) (gt (len $imgMatch) 0) -}}
+        {{- $firstImg = replaceRE `(?i).*src="([^"]+)".*` "$1" (index $imgMatch 0) -}}
+      {{- end -}}
+      {{- if not $firstImg -}}
+        {{- $shortcodeImgMatch := findRE `(?i)\{\{<\s*image\s+[^>]*src="([^"]+)"[^>]*>\}\}` $rawContent -}}
+        {{- if gt (len $shortcodeImgMatch) 0 -}}
+          {{- $firstImg = replaceRE `(?i).*\{\{<\s*image\s+[^>]*src="([^"]+)".*` "$1" (index $shortcodeImgMatch 0) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if not $firstImg -}}
+        {{- $markdownImgMatch := findRE `!\[[^\]]*\]\(([^)\s]+)` $rawContent -}}
+        {{- if gt (len $markdownImgMatch) 0 -}}
+          {{- $firstImg = replaceRE `!\[[^\]]*\]\(([^)\s]+).*` "$1" (index $markdownImgMatch 0) -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if $firstImg -}}
+        {{- $assetPath := replaceRE `^/+` "" $firstImg -}}
+        {{- $assetRes := resources.Get $assetPath -}}
+        {{- if $assetRes -}}
+          {{- $thumb = $assetRes.RelPermalink -}}
+        {{- else if hasPrefix $firstImg "/" -}}
+          {{- $thumb = $firstImg -}}
+        {{- else -}}
+          {{- $thumb = printf "/%s" $firstImg -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $entry := dict
+      "section" (.CurrentSection.Title | plainify)
+      "slug" .RelPermalink
+      "title" $title
+      "mainHeading" ($mainHeading | plainify)
+      "mdHeadings" $mdHeadings
+      "description" $description
+      "date" (.Date.Format "January 2, 2006")
+      "image" .Params.image
+      "imageSM" .Params.image_sm
+      "thumbnail" $thumb
+      "isVideo" $isVideo
+      "mediaId" $mediaID
+      "mediaHost" $mediaHost
+      "embedUrl" $embedURL
+      "searchKeyword" (.Params.search_keyword | default "")
+      "categories" (delimit (.Params.categories | default (slice)) ", ")
+      "tags" (delimit (.Params.tags | default (slice)) ", ")
+      "content" (cond (gt (len $content) 0) $content $description)
+    -}}
+    {{- $items = $items | append $entry -}}
+  {{- end -}}
+{{- end -}}
+{{- $items | jsonify -}}

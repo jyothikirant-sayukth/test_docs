@@ -1,0 +1,292 @@
+{{ $isTocEnable := site.Params.tableofcontents }}
+{{ $tocHtml := .TableOfContents }}
+{{ $hasBuiltInToc := gt (len (findRE "<li>" $tocHtml 1)) 0 }}
+{{ $hasContentHeadings := gt (len (findRE `(?s)<h[1-6][^>]*id=` .Content 1)) 0 }}
+{{ $showToc := and $isTocEnable (or $hasBuiltInToc $hasContentHeadings) }}
+<script>
+  document.documentElement.classList.add("docs-page-loading");
+  if (document.body) document.body.classList.add("docs-page-loading");
+</script>
+<section>
+  <div
+    class="{{ if $showToc }}
+      container-fluid
+    {{ else }}
+      container
+  {{ end }} mb-10 md:mb-16 lg:mb-20">
+    <div class="row md:justify-center lg:justify-start">
+      <div
+        class="{{ if $showToc }}
+          w-[300px] lg:w-[380px] lg:pr-0
+        {{ else }}
+          max-w-[320px] lg:pr-0 lg:max-w-[380px] 2xl:max-w-[400px]
+        {{ end }} docs-left-shell">
+        <aside
+          class="sidebar lg:sticky lg:top-[95px] lg:!w-full lg:!py-10 lg:!pr-[46px]">
+          <ul class="sidebar-list">
+            {{ $currentNode := . }}
+            {{ range site.Home.Sections.ByWeight }}
+              {{ $numberOfMainPages := add (len .Pages) (len .Sections) }}
+              {{ if or (eq $numberOfMainPages 0) (eq .Section "pages") (eq .Section "sections") }}
+              {{ else }}
+                {{ template "section-tree-nav" dict "sect" . "currentnode" $currentNode }}
+              {{ end }}
+            {{ end }}
+          </ul>
+        </aside>
+        <button
+          class="sidebar-toggler group peer"
+          aria-label="show/hide sidebar">
+          <i class="fa-solid fa-list group-[.active]:hidden"></i>
+          <i class="fa-solid fa-xmark hidden group-[.active]:inline-block"></i>
+        </button>
+        <div class="sidebar-overlay hidden max-lg:peer-[.active]:block"></div>
+      </div>
+      <div
+        class="{{ if $showToc }}
+          lg:w-[calc(100%-380px-350px)] lg:border-l lg:border-l-border lg:pl-0 lg:pr-0
+          {{ if $showToc }}
+            lg:border-r lg:border-r-border
+          {{ end }}
+        {{ else }}
+          max-w-[calc(100% - 400px)] col-12 lg:col lg:border-l-border
+          lg:border-l lg:pl-0
+        {{ end }} docs-main-shell">
+        <div
+          class="{{ if $showToc }}
+            max-w-full px-0 pt-7 lg:pt-10 lg:pl-[46px] lg:pr-[46px]
+          {{ else }}
+            pt-10 lg:pl-[46px]
+          {{ end }}">
+          <article class="content prose max-w-full px-0 py-0">
+            {{ partial "components/breadcrumb" (dict "Context" .) }}
+
+            {{ if $showToc }}
+              <div
+                class="toc-responsive bg-theme-light group rounded-xl sm:rounded-2xl lg:hidden">
+                <div
+                  class="text-h6 sm:text-h5 text-dark relative cursor-pointer px-4 py-3 font-semibold sm:px-6 sm:py-5 sm:pr-16"
+                  data-accordion>
+                  {{ i18n "on_this_page" }}
+                  <div
+                    class="absolute right-4 top-1/2 m-0 block -translate-y-1/2 rounded-lg bg-white p-3">
+                    <svg
+                      class="w-full transition-transform duration-300 group-[.active]:rotate-180"
+                      width="16"
+                      height="12"
+                      viewBox="0 0 20 13"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18 2L10 10L2 2"
+                        stroke="currentColor"
+                        stroke-width="3" />
+                    </svg>
+                  </div>
+                </div>
+                <div
+                  class="toc-content border-t-theme-light bg-theme-light hidden max-h-0 overflow-hidden rounded-b-lg border-t px-4 pb-5 pt-0 group-[.active]:block group-[.active]:max-h-[1000px] md:px-6">
+                  {{ if $hasBuiltInToc }}
+                    {{ $tocHtml }}
+                  {{ else }}
+                    <nav id="TableOfContents" data-generated-toc="pending"></nav>
+                  {{ end }}
+                </div>
+              </div>
+              <div class="hr lg:hidden">
+                <hr />
+              </div>
+            {{ end }}
+            {{ if .Content }}
+              {{ .Content }}
+
+              {{ if .GitInfo.Hash }}
+              <div class="py-8">
+                <hr class="!mb-4" />
+                <span class="mb-0 !text-sm">
+                  <i class="far fa-clock"></i>
+                  {{ i18n `last_update` }} - {{ .Lastmod | time.Format ":date_long" }}
+                </span>
+              </div>
+              {{ end }}
+
+            {{ else }}
+              <h2 class="fw-bold mb-4">{{ .Title }}</h2>
+            {{ end }}
+          </article>
+        </div>
+      </div>
+      {{ if $showToc }}
+        <div class="hidden w-[350px] lg:ml-auto lg:block lg:pl-0 lg:pr-0 docs-right-shell">
+          <div
+            class="cs-scrollbar lg:sticky lg:top-[80px] pt-10 lg:block lg:transition-none">
+            <div id="toc-wrapper">
+              <div class="toc-heading">
+                <h2 class="text-h5 font-medium">Table of Contents</h2>
+              </div>
+              {{ if $hasBuiltInToc }}
+                {{ $tocHtml }}
+              {{ else }}
+                <nav id="TableOfContents" data-generated-toc="pending"></nav>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ define "section-tree-nav-item" }}
+  {{ $currentNode := .currentnode }}
+  {{ $has_children := .has_child }}
+  {{ with .sect }}
+    {{ safeHTML .Params.head }}
+    {{ $fileUniqueID := "" }}
+    {{ with .File }}{{ $fileUniqueID = .UniqueID }}{{ end }}
+    {{ $currentNodeFileUniqueID := "" }}
+    {{ with $currentNode.File }}
+      {{ $currentNodeFileUniqueID = .UniqueID }}
+    {{ end }}
+    <li
+      class="{{ if or (.IsAncestor $currentNode) (eq $fileUniqueID $currentNodeFileUniqueID) }}
+        active
+      {{ end }} group">
+      {{ $isSingleDirectPage := and $has_children (eq (len .Sections) 0) (eq (len .Pages) 1) }}
+      {{ if $isSingleDirectPage }}
+        {{ $singlePage := index (.Pages.ByWeight) 0 }}
+        {{ if $singlePage.Permalink }}
+          <a href="{{ $singlePage.Permalink }}" data-accordion>
+            {{ .Title }}
+          </a>
+        {{ else }}
+          <span>{{ .Title }}</span>
+        {{ end }}
+      {{ else if $has_children }}
+        <button
+          class="has-sibling-child"
+          aria-label="Dropdown Collapse"
+          data-accordion>
+          {{ .Title }}
+        </button>
+      {{ else }}
+        {{ if .Permalink }}
+          <a href="{{ .Permalink }}" data-accordion>
+            {{ .Title }}
+          </a>
+        {{ else }}
+          <span>{{ .Title }}</span>
+        {{ end }}
+      {{ end }}
+
+      {{ if and $has_children (not $isSingleDirectPage) }}
+        <ul>
+          {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+          {{ $currentNode.Scratch.Set "pages" .Pages }}
+          {{ if .Sections }}
+            {{ $currentNode.Scratch.Set "pages" (.Pages | union .Sections) }}
+          {{ end }}
+
+          {{ $pages := ($currentNode.Scratch.Get "pages") }}
+          {{ range $pages.ByWeight }}
+            {{ $check_child := gt (add (len .Pages) (len .Sections)) 0 }}
+            {{ template "section-tree-nav-item" dict "sect" . "currentnode" $currentNode "has_child" $check_child }}
+          {{ end }}
+        </ul>
+      {{ end }}
+    </li>
+  {{ end }}
+{{ end }}
+
+{{ define "section-tree-nav" }}
+  {{ $currentNode := .currentnode }}
+  {{ with .sect }}
+    {{ safeHTML .Params.head }}
+    {{ $titleLower := lower .Title }}
+    {{ $iconClass := "fa-regular fa-folder-open" }}
+    {{ if or (eq $titleLower "basic details") (in $titleLower "basic details") }}
+      {{ $iconClass = "fa-regular fa-file-lines" }}
+    {{ else if or (eq $titleLower "getting started") (in $titleLower "getting started") }}
+      {{ $iconClass = "fa-regular fa-circle-play" }}
+    {{ else if or (in $titleLower "building") (in $titleLower "scenario") }}
+      {{ $iconClass = "fa-regular fa-map" }}
+    {{ else if or (in $titleLower "survey propert") (eq $titleLower "survey properties") }}
+      {{ $iconClass = "fa-regular fa-clipboard" }}
+    {{ else if or (in $titleLower "organization") (in $titleLower "document") }}
+      {{ $iconClass = "fa-regular fa-folder" }}
+    {{ else if or (in $titleLower "complete survey") (in $titleLower "complete") }}
+      {{ $iconClass = "fa-regular fa-square-check" }}
+    {{ else if or (in $titleLower "terms") (in $titleLower "condition") }}
+      {{ $iconClass = "fa-regular fa-file-lines" }}
+    {{ else if or (in $titleLower "user manual") (in $titleLower "manual") }}
+      {{ $iconClass = "fa-regular fa-circle-question" }}
+    {{ else if or (in $titleLower "helpline") (in $titleLower "support") }}
+      {{ $iconClass = "fa-regular fa-life-ring" }}
+    {{ else if or (in $titleLower "logout") }}
+      {{ $iconClass = "fa-regular fa-rectangle-xmark" }}
+    {{ else if or (in $titleLower "roles") (in $titleLower "responsibilit") }}
+      {{ $iconClass = "fa-regular fa-id-badge" }}
+    {{ end }}
+    {{ $fileUniqueID := "" }}
+    {{ with .File }}{{ $fileUniqueID = .UniqueID }}{{ end }}
+    {{ $currentNodeFileUniqueID := "" }}
+    {{ with $currentNode.File }}
+      {{ $currentNodeFileUniqueID = .UniqueID }}
+    {{ end }}
+    <li
+      data-nav-id="{{ .Permalink }}"
+      title="{{ .Title }}"
+      class="{{ if or (.IsAncestor $currentNode) (eq $fileUniqueID $currentNodeFileUniqueID) }}
+        active
+      {{ end }} sidebar-section group relative">
+      {{ $isSingleDirectPage := and (eq (len .Sections) 0) (eq (len .Pages) 1) }}
+      {{ if $isSingleDirectPage }}
+        {{ $singlePage := index (.Pages.ByWeight) 0 }}
+        <a
+          href="{{ $singlePage.Permalink }}"
+          class="sidebar-title flex w-full cursor-pointer select-none items-center gap-4 bg-transparent p-0 text-left">
+          <h2
+            class="order-1 text-base font-medium group-[.active]:font-semibold sm:text-[20px] lg:text-[22px]">
+            {{ .Title }}
+          </h2>
+          <span
+            class="order-0 bg-theme-light group-hover:bg-primary group-[.active]:bg-primary flex h-[40px] w-[40px] items-center justify-center rounded-md p-[10px] transition-colors duration-300 sm:h-[50px] sm:w-[50px]"
+            aria-hidden="true">
+            <i class="{{ $iconClass }}"></i>
+          </span>
+        </a>
+      {{ else }}
+        <button
+          type="button"
+          class="sidebar-title sidebar-title-expandable flex w-full cursor-pointer select-none items-center gap-4 bg-transparent p-0 text-left"
+          data-accordion
+          data-accordion-top>
+          <h2
+            class="order-1 text-base font-medium group-[.active]:font-semibold sm:text-[20px] lg:text-[22px]">
+            {{ .Title }}
+          </h2>
+          <span
+            class="order-0 bg-theme-light group-hover:bg-primary group-[.active]:bg-primary flex h-[40px] w-[40px] items-center justify-center rounded-md p-[10px] transition-colors duration-300 sm:h-[50px] sm:w-[50px]"
+            aria-hidden="true">
+            <i class="{{ $iconClass }}"></i>
+          </span>
+          <span class="sidebar-expand-indicator order-2" aria-hidden="true"></span>
+        </button>
+      {{ end }}
+      {{ $numberOfPages := (add (len .Pages) (len .Sections)) }}
+      {{ if and (ne $numberOfPages 0) (not $isSingleDirectPage) }}
+        <ul class="sidebar-children group-[.active]:mt-4 group-[.active]:max-h-[1000px]">
+          {{ $currentNode.Scratch.Set "pages" .Pages }}
+          {{ if .Sections }}
+            {{ $currentNode.Scratch.Set "pages" (.Pages | union .Sections) }}
+          {{ end }}
+          {{ $pages := ($currentNode.Scratch.Get "pages") }}
+          {{ range $pages.ByWeight }}
+            {{ $check_child := gt (add (len .Pages) (len .Sections)) 0 }}
+            {{ template "section-tree-nav-item" dict "sect" . "currentnode" $currentNode "has_child" $check_child }}
+          {{ end }}
+        </ul>
+      {{ end }}
+    </li>
+  {{ end }}
+{{ end }}

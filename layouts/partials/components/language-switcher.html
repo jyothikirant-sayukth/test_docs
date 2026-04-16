@@ -1,0 +1,152 @@
+{{/* Project override: custom language dropdown */}}
+{{ $class := .Class }}
+{{ $context := .Context }}
+{{ $pageLang := $context.Lang }}
+{{ $allLanguages := slice
+  (dict "code" "en" "name" "English" "short" "En")
+  (dict "code" "hi" "name" "Hindi" "short" "Hi")
+  (dict "code" "te" "name" "Telugu" "short" "Te")
+  (dict "code" "ta" "name" "Tamil" "short" "Ta")
+  (dict "code" "kn" "name" "Kannada" "short" "Kn")
+  (dict "code" "ml" "name" "Malayalam" "short" "Ml")
+  (dict "code" "mr" "name" "Marathi" "short" "Mr")
+  (dict "code" "gu" "name" "Gujarati" "short" "Gu")
+  (dict "code" "pa" "name" "Punjabi" "short" "Pa")
+  (dict "code" "bn" "name" "Bengali" "short" "Bn")
+  (dict "code" "or" "name" "Odia" "short" "Or")
+  (dict "code" "as" "name" "Assamese" "short" "As")
+  (dict "code" "ur" "name" "Urdu" "short" "Ur")
+  (dict "code" "sa" "name" "Sanskrit" "short" "Sa")
+  (dict "code" "gom" "name" "Konkani" "short" "Go")
+  (dict "code" "mni" "name" "Manipuri" "short" "Mn")
+  (dict "code" "brx" "name" "Bodo" "short" "Bo")
+  (dict "code" "doi" "name" "Dogri" "short" "Do")
+  (dict "code" "ks" "name" "Kashmiri" "short" "Ks")
+  (dict "code" "mai" "name" "Maithili" "short" "Ma")
+  (dict "code" "sat" "name" "Santali" "short" "St")
+  (dict "code" "sd" "name" "Sindhi" "short" "Sd")
+  (dict "code" "ne" "name" "Nepali" "short" "Ne")
+}}
+{{ $langLabels := dict
+  "en" "English"
+  "te" "Telugu"
+  "hi" "Hindi"
+  "as" "Assamese"
+  "ta" "Tamil"
+  "kn" "Kannada"
+  "ml" "Malayalam"
+  "mr" "Marathi"
+  "bn" "Bengali"
+  "gu" "Gujarati"
+  "pa" "Punjabi"
+  "or" "Odia"
+  "ur" "Urdu"
+  "sa" "Sanskrit"
+  "gom" "Konkani"
+  "mni" "Manipuri"
+  "brx" "Bodo"
+  "doi" "Dogri"
+  "ks" "Kashmiri"
+  "mai" "Maithili"
+  "sat" "Santali"
+  "sd" "Sindhi"
+  "ne" "Nepali"
+}}
+{{ $langShort := dict
+  "en" "En"
+  "te" "Te"
+  "hi" "Hi"
+  "as" "As"
+  "ta" "Ta"
+  "kn" "Kn"
+  "ml" "Ml"
+  "mr" "Mr"
+  "bn" "Bn"
+  "gu" "Gu"
+  "pa" "Pa"
+  "or" "Or"
+  "ur" "Ur"
+  "sa" "Sa"
+  "gom" "Go"
+  "mni" "Mn"
+  "brx" "Bo"
+  "doi" "Do"
+  "ks" "Ks"
+  "mai" "Ma"
+  "sat" "St"
+  "sd" "Sd"
+  "ne" "Ne"
+}}
+{{ $available := newScratch }}
+{{ $available.Set (lower $pageLang) $context.RelPermalink }}
+{{ $currentPath := $context.RelPermalink }}
+{{/* normalize current path by removing active language prefix, so fallback links can target same route in another language */}}
+{{ range site.Languages }}
+  {{ $code := lower .Lang }}
+  {{ if ne $code "en" }}
+    {{ $prefix := printf "/%s/" $code }}
+    {{ if hasPrefix $currentPath $prefix }}
+      {{ $currentPath = printf "/%s" (strings.TrimPrefix $prefix $currentPath) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+{{/* Prefer exact translated URL of current page */}}
+{{ range $context.AllTranslations }}
+  {{ $code := lower .Language.Lang }}
+  {{ $available.Set $code .RelPermalink }}
+{{ end }}
+
+<details class="{{ $class }} ps-lang-switcher">
+  <summary aria-label="Select language">
+    <span class="ps-lang-switcher-label">
+      {{ index $langShort (lower $pageLang) | default (upper $pageLang) }}
+    </span>
+    <i class="fa-solid fa-chevron-down ps-lang-switcher-chevron" aria-hidden="true"></i>
+  </summary>
+  <div class="ps-lang-switcher-menu">
+    {{ range $allLanguages }}
+      {{ $code := lower .code }}
+      {{ $realFileCount := int (partialCached "functions/lang-file-count.html" (dict "dir" "content" "code" $code) $code) }}
+      {{ $hasRealPages := gt $realFileCount 0 }}
+      {{ $isEnabled := or (eq $code "en") $hasRealPages }}
+      {{ if $isEnabled }}
+        {{ $target := ($available.Get $code) }}
+        {{ $hasPageTranslation := false }}
+        {{ if eq $code (lower $pageLang) }}
+          {{ $hasPageTranslation = true }}
+        {{ else if and $context.IsTranslated (gt (len (where $context.Translations "Language.Lang" $code)) 0) }}
+          {{ $hasPageTranslation = true }}
+        {{ end }}
+        {{ $englishTarget := ($available.Get "en") | default ($currentPath | default "/") }}
+        {{ if not $target }}
+          {{ if eq $code "en" }}
+            {{ $target = $englishTarget }}
+          {{ else if $hasPageTranslation }}
+            {{ $target = printf "/%s%s" $code ($currentPath | default "/") }}
+          {{ else }}
+            {{ $target = printf "%s?ps_lang=%s&ps_missing_translation=1" $englishTarget $code }}
+          {{ end }}
+        {{ else if and (ne $code "en") (not $hasPageTranslation) }}
+          {{ $target = printf "%s?ps_lang=%s&ps_missing_translation=1" $englishTarget $code }}
+        {{ end }}
+        <a
+          href="{{ $target }}"
+          class="ps-lang-switcher-item {{ if eq $pageLang $code }}active{{ end }}">
+          <span>{{ index $langLabels $code | default (upper $code) }}</span>
+          {{ if eq $pageLang $code }}
+            <i class="fa-solid fa-check" aria-hidden="true"></i>
+          {{ end }}
+        </a>
+      {{ else }}
+        <button
+          type="button"
+          class="ps-lang-switcher-item disabled"
+          aria-disabled="true"
+          data-coming-soon="Coming Soon">
+          <span>{{ index $langLabels $code | default (upper $code) }}</span>
+          <em>Coming Soon</em>
+        </button>
+      {{ end }}
+    {{ end }}
+  </div>
+</details>

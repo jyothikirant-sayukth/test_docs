@@ -1,0 +1,16 @@
+{{/* Count real language source files (e.g. *.hi.md) under content/ recursively. */}}
+{{ $dir := .dir }}
+{{ $code := lower .code }}
+{{ $pattern := printf `\.%s\.md$` $code }}
+{{ $count := 0 }}
+
+{{ range (readDir $dir) }}
+  {{ $entryPath := printf "%s/%s" $dir .Name }}
+  {{ if .IsDir }}
+    {{ $count = add $count (int (partial "functions/lang-file-count.html" (dict "dir" $entryPath "code" $code))) }}
+  {{ else if gt (len (findRE $pattern .Name)) 0 }}
+    {{ $count = add $count 1 }}
+  {{ end }}
+{{ end }}
+
+{{ return $count }}

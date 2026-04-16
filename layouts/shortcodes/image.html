@@ -1,0 +1,99 @@
+{{- $src := .Get "src" -}}
+{{- $alt := .Get "alt" | default "" -}}
+{{- $class := .Get "class" | default "" -}}
+{{- $caption := .Get "caption" -}}
+{{- $title := .Get "title" | default $alt -}}
+{{- $loading := .Get "loading" | default "lazy" -}}
+{{- $decoding := .Get "decoding" | default "async" -}}
+{{- $style := .Get "style" | default "" -}}
+{{- $width := .Get "width" -}}
+{{- $cleanSrc := strings.TrimPrefix "/" $src -}}
+{{- $resource := false -}}
+
+{{- with .Page.Resources.GetMatch $src -}}
+  {{- $resource = . -}}
+{{- end -}}
+{{- if not $resource -}}
+  {{- with .Page.Resources.GetMatch $cleanSrc -}}
+    {{- $resource = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if not $resource -}}
+  {{- with resources.Get $cleanSrc -}}
+    {{- $resource = . -}}
+  {{- end -}}
+{{- end -}}
+{{- if and (not $resource) (not (hasPrefix $cleanSrc "images/")) -}}
+  {{- with resources.Get (printf "images/%s" $cleanSrc) -}}
+    {{- $resource = . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $imgSrc := $src | relURL -}}
+{{- if $resource -}}
+  {{- $imgSrc = $resource.RelPermalink -}}
+{{- end -}}
+
+{{- $cardStyle := "" -}}
+{{- with $width -}}
+  {{- $widthValue := printf "%spx" (replaceRE "px$" "" (printf "%v" .)) -}}
+  {{- $cardStyle = printf "width:min(100%%, %s);" $widthValue -}}
+{{- end -}}
+
+{{- $inlineStyles := slice -}}
+{{- if not $cardStyle -}}
+  {{- with $width -}}
+    {{- $widthValue := printf "%spx" (replaceRE "px$" "" (printf "%v" .)) -}}
+    {{- $inlineStyles = $inlineStyles | append (printf "width:min(100%%, %s)" $widthValue) -}}
+    {{- $inlineStyles = $inlineStyles | append "height:auto" -}}
+  {{- end -}}
+{{- end -}}
+{{- with $style -}}
+  {{- $inlineStyles = $inlineStyles | append (strings.TrimSuffix ";" .) -}}
+{{- end -}}
+{{- $styleAttr := delimit $inlineStyles "; " -}}
+{{- if $styleAttr -}}
+  {{- $styleAttr = printf "%s;" $styleAttr -}}
+{{- end -}}
+
+{{- if $cardStyle -}}
+<figure class="docs-image-card {{ $class }}" data-docs-image-card {{ with $cardStyle }}style="{{ . }}"{{ end }}>
+  <div class="docs-image-card__toolbar">
+    <button type="button" class="docs-image-card__view" data-docs-image-toggle aria-expanded="false">View</button>
+  </div>
+  <div class="docs-image-card__viewport">
+    <img
+      src="{{ $imgSrc }}"
+      alt="{{ $alt }}"
+      class="img docs-image-card__img {{ $class }}"
+      loading="{{ $loading }}"
+      decoding="{{ $decoding }}"
+      {{ with $title }}title="{{ . }}"{{ end }}
+      {{ with $styleAttr }}style="{{ . }}"{{ end }} />
+  </div>
+  {{ with $caption }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
+{{- else if $caption -}}
+<figure>
+  <img
+    src="{{ $imgSrc }}"
+    alt="{{ $alt }}"
+    class="img {{ $class }}"
+    loading="{{ $loading }}"
+    decoding="{{ $decoding }}"
+    {{ with $width }}width="{{ . }}"{{ end }}
+    {{ with $title }}title="{{ . }}"{{ end }}
+    {{ with $styleAttr }}style="{{ . }}"{{ end }} />
+  <figcaption>{{ $caption }}</figcaption>
+</figure>
+{{- else -}}
+<img
+  src="{{ $imgSrc }}"
+  alt="{{ $alt }}"
+  class="img {{ $class }}"
+  loading="{{ $loading }}"
+  decoding="{{ $decoding }}"
+  {{ with $width }}width="{{ . }}"{{ end }}
+  {{ with $title }}title="{{ . }}"{{ end }}
+  {{ with $styleAttr }}style="{{ . }}"{{ end }} />
+{{- end -}}

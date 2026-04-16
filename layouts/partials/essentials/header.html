@@ -1,0 +1,111 @@
+{{ $header_alt := false }}
+{{ if .Params.header_alt}}
+  {{ $header_alt = true }}
+{{ end }}
+
+{{ $isDocPage := false }}
+{{ with site.GetPage .Section }}
+  {{ if eq .Type "docs" }}
+    {{ $isDocPage = true }}
+  {{ end }}
+{{ end }}
+
+<header
+  class="header header-sticky-top {{ if $header_alt }}
+    header-alt
+  {{ end }} w-full">
+  {{ $docsHome := "getting-started/about/" | relLangURL }}
+  <nav class="navbar container-fluid relative">
+    <a class="navbar-brand bg-shape" href="{{ "/" | relLangURL }}">
+      <span class="logo-light">
+        {{ partial "logo" }}
+      </span>
+      <span class="logo-dark">
+        {{ partial "logo" (dict "Src" site.Params.logo_darkmode) }}
+      </span>
+    </a>
+
+    <div class="docs-top-actions ml-auto hidden items-center gap-2 lg:flex">
+      {{ if $isDocPage }}
+        <div class="docs-global-search-wrap relative">
+          <button
+            class="docs-global-search-toggle inline-flex"
+            type="button"
+            aria-label="Open search"
+            aria-expanded="false">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <form class="docs-global-search-panel" onsubmit="return false;">
+            <input
+              type="search"
+              class="docs-global-search-input"
+              placeholder="Search The Doc" />
+            <select class="docs-global-search-category" aria-label="Filter search category">
+              <option value="all">All</option>
+              <option value="pages">Pages</option>
+              <option value="videos">Videos</option>
+              <option value="content">Content</option>
+            </select>
+            <button
+              class="docs-global-search-btn"
+              type="button"
+              aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <div class="docs-global-search-results" hidden></div>
+        </div>
+      {{ else if .IsHome }}
+        <a class="docs-top-link inline-flex" href="{{ $docsHome }}">Docs</a>
+      {{ else }}
+        <a class="docs-top-link inline-flex" href="{{ $docsHome }}">Docs</a>
+      {{ end }}
+
+      <button
+        class="docs-theme-toggle inline-flex"
+        type="button"
+        data-theme-toggle
+        aria-label="Toggle theme">
+        <i class="fas fa-moon"></i>
+      </button>
+      {{ partial "components/language-switcher" (dict "Context" . "Class" "hidden lg:block !m-0") }}
+    </div>
+
+    {{ partial "components/language-switcher" (dict "Context" . "Class" "mt-0 lg:hidden sm:mr-0 ml-auto") }}
+
+    <button
+      class="docs-theme-toggle docs-theme-toggle-mobile lg:hidden"
+      type="button"
+      data-theme-toggle
+      aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    {{ if $isDocPage }}
+      <button
+        class="border-dark/20 mr-2 rounded-md border p-1 px-3 lg:hidden"
+        type="button"
+        aria-label="open seach popup"
+        data-target="search-modal">
+        <i class="fas fa-search text-sm"></i>
+      </button>
+    {{ else if .IsHome }}
+      <a
+        class="docs-top-link mr-2 inline-flex lg:hidden"
+        href="{{ $docsHome }}">
+        Docs
+      </a>
+    {{ else }}
+      <a
+        class="docs-top-link mr-2 inline-flex lg:hidden"
+        href="{{ $docsHome }}">
+        Docs
+      </a>
+    {{ end }}
+
+    <button
+      class="navbar-toggler hidden"
+      aria-label="navbar toggler">
+    </button>
+  </nav>
+</header>
