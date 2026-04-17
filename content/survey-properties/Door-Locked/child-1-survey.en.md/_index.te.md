@@ -6,9 +6,9 @@ weight: 1
 ## <u><b>తలుపు లాక్డ్</b></u>
 > సర్వే సమయంలో యజమాని అందుబాటులో లేనప్పుడు ఒక తలుపు లాక్డ్ రికార్డ్ సృష్టించబడుతుంది, మరియు పరిమిత వివరాలు మాత్రమే సేకరించబడతాయి.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=8lwipjBnU" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=wnBcm7qPh" title="Panchayat Seva Video" >}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=eVVXdcur8" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=aSmyA2y7q" title="Panchayat Seva Video" >}}
 
 ### నావిగేషన్
 

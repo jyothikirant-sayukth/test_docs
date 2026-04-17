@@ -6,7 +6,7 @@ weight: 7
 # <u> పాస్వర్డ్ను మర్చిపోయాను </u>
 <b>మర్చిపోయాను పాస్వర్డ్</b> ఫీచర్ మీరు పాస్వర్డ్ను మరచిపోయినట్లయితే మీ పాస్వర్డ్ను రీసెట్ చేయడానికి సహాయపడుతుంది.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=Dboaf1p23" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=K2kPW5HE1" title="Panchayat Seva Video" >}}
 
 ## నావిగేషన్ 
 1. <b>సర్వే యాప్</b> ను తెరవండి.

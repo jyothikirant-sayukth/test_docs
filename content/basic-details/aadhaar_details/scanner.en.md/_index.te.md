@@ -5,7 +5,7 @@ weight: 3
 
 # <> యూజర్/సిటిజన్ వివరాలు</> : ఆధార్ స్కానర్
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=ZAhestwjX" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="017_thatched_roof_type" >}}
 
 వినియోగదారు వివరాలను ఆధార్ స్కాన్ ద్వారా లేదా మాన్యువల్ ఎంట్రీ ద్వారా సంగ్రహించవచ్చు.
 <center>

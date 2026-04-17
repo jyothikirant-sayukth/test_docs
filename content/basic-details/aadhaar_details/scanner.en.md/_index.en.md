@@ -5,7 +5,7 @@ weight: 3
 
 # <u> User/Citizen Details</u>: Aadhaar Scanner
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=ZAhestwjX" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="014_rcc_roof_type" >}}
 
 User Details can be captured by Aadhaar Scan or by Manual Entry.
 <center>

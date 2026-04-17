@@ -12,7 +12,7 @@ If you are unable to upload the records due to low internet connection or no int
   <b>Receiver :</b> The person who will receive and upload the received data.
 {{< /notice >}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=6CsmjsnIR" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="020_country_or_manglore_tiles_ac_sheets_sbs" >}}
 
 ## Navigation
 

@@ -6,7 +6,7 @@ weight: 1
 # <u>Login</u>
 Survey Executives will login using their Credentials.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=BmhBA1odz" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=aSmyA2y7q" title="Panchayat Seva Video" >}}
 
 ## Navigation
 Open the AP PS Panchayat Seva app, and the login page will display.<br>

@@ -4,7 +4,7 @@ weight: 2
 ---
 ## <u>How to Install </u>?
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=7qmmMU979" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=1dRVHUnAD" title="Panchayat Seva Video" >}}
 
 1. Open the [Playstore](https://play.google.com/store/apps/details?id=com.sayukth.meradigit&hl=es_419) App in your Android Mobile.
 1. Download the <b>"MeraDigit"</b> App and Install.

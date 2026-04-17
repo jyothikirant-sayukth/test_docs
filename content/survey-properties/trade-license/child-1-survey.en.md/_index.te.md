@@ -6,7 +6,7 @@ weight: 1
 # <u><b>ట్రేడ్ లైసెన్స్</b></u>
  >ఒక వాణిజ్య లైసెన్స్ ఒక నిర్దిష్ట వ్యాపారం ప్రారంభించడానికి అనుమతి ఇస్తుంది.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=D3k5wP6yE" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=vMN6YIgSM" title="Panchayat Seva Video" >}}
 
 ### నావిగేషన్
 1. మీ వినియోగదారు పేరు మరియు పాస్వర్డ్ను నమోదు చేసి, <b> లాగిన్</b> బటన్ను క్లిక్ చేయండి.

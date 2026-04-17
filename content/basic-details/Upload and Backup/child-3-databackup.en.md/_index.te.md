@@ -11,7 +11,7 @@ weight: 2
 <>రీసీవర్ : </b> అందుకున్న డేటాను స్వీకరించే మరియు అప్లోడ్ చేసే వ్యక్తి.
 {{< /notice >}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=6CsmjsnIR" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="036_katarusum" >}}
 
 ## నావిగేషన్
 

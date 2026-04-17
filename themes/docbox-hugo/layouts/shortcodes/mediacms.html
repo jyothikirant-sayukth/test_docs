@@ -1,15 +1,29 @@
-{{/* Get video URL and title from shortcode params */}}
-{{ $url := .Get "url" }}
-{{ $title := .Get "title" | default "Video" }}
+{{/* Resolve video URL from registry by uuid + page language */}}
+{{ $uuid := .Get "uuid" }}
+{{ $registry := site.Data.video_registry }}
+{{ $video := index $registry.videos $uuid }}
+{{ $lang := .Page.Language.Lang }}
 
-{{/* Generate a unique iframe ID */}}
-{{ $iframeID := "video-frame-" | printf "%s%d" (now.UnixNano) }}
+{{ $url := "" }}
+{{ $title := $uuid }}
 
-<!-- Video container -->
+{{ if $video }}
+  {{ $title = $video.title | default $uuid }}
+  {{ with index $video.languages $lang }}
+    {{ $url = . }}
+  {{ else }}
+    {{ range $video.languages }}
+      {{ if not $url }}{{ $url = . }}{{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $iframeID := printf "video-frame-%d" now.UnixNano }}
+
+{{ if $url }}
 <div style="display: flex; justify-content: center; align-items: center; padding-bottom: 30px;">
   <div style="position: relative; width: 100%; max-width: 768px; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-    <!-- Iframe with dynamic ID; src will be set by JS -->
-    <iframe 
+    <iframe
       id="{{ $iframeID }}"
       title="{{ $title }}"
       frameborder="0"
@@ -20,14 +34,16 @@
   </div>
 </div>
 
-<!-- Inject fresh timestamp at runtime to prevent session expiry -->
 <script>
   (() => {
     const iframe = document.getElementById('{{ $iframeID }}');
     if (iframe) {
-      const baseUrl = "{{ $url }}"; 
+      const embedUrl = "{{ $url }}".replace("/view?", "/embed?");
       const timestamp = Math.floor(Date.now() / 1000);
-      iframe.src = `${baseUrl}?d=cms&q=${timestamp}`;
+      iframe.src = `${embedUrl}?d=cms&q=${timestamp}`;
     }
   })();
 </script>
+{{ else }}
+<p><em>Video not available: <code>{{ $uuid }}</code> (lang: {{ $lang }})</em></p>
+{{ end }}

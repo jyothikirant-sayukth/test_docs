@@ -9,7 +9,7 @@ weight: 2
 
 {{< notice "info">}} The Survey Manager will assign the Panchayat to the Survey Executive.{{< /notice>}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=T1MUbKndG" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=wnBcm7qPh" title="Panchayat Seva Video" >}}
 
 ### Navigation 
 1. Open the <b>Menu</b> on the top left corner of the Dashboard Screen.<br>

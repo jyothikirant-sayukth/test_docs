@@ -7,7 +7,7 @@ weight: 1
 Once you have successfully completed the survey in one panchayat, you can use the <b>Complete Survey</b> feature to start the survey in another panchayat.
 {{< notice "note" >}} Survey Manager will assign you the Panchayat.{{< /notice>}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=Q4Rb52ia4" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="004_upload_survey_data" >}}
 
 ## Navigation
 1. Click on the <b>Menu</b> at the top left corner of the Dashboard screen.<br>

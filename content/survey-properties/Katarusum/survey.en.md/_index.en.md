@@ -6,7 +6,7 @@ weight: 1
 # <b><u>Katarusum</u></b>
 >A Katarusum is a Village level Small-Scale Industry.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=3umRIcR8D" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=4soD2J0Wi" title="Panchayat Seva Video" >}}
 
 ###  Navigation
 1. Enter your Username and Password, then click on the <b>Login</b> button.

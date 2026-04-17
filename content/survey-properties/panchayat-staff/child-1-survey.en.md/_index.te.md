@@ -6,7 +6,7 @@ weight: 1
 # <u><b>పంచాయతీ సిబ్బంది</b></u>
 > పంచాయతీ సిబ్బంది ఒక పంచాయతీలో సేవలను నిర్వహించే సభ్యులు.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=vlTxNxFqG" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=1dRVHUnAD" title="Panchayat Seva Video" >}}
 
 ### నావిగేషన్
 1. మీ వినియోగదారు పేరు మరియు పాస్వర్డ్ను నమోదు చేసి, <b> లాగిన్</b> బటన్ను క్లిక్ చేయండి.

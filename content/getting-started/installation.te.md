@@ -5,7 +5,7 @@ weight: 2
 
 ## <u> </u> ను ఎలా ఇన్స్టాల్ చేయాలి?
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=7qmmMU979" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=1dRVHUnAD" title="Panchayat Seva Video" >}}
 
 1. మీ ఆండ్రాయిడ్ మొబైల్ లో [ప్లేస్టోర్]( : //play.google.com/store/apps/details?id=com.sayukth.meradigit&hl=es_419) అనువర్తనాన్ని తెరవండి.
 1. <b>"మెరాడిజిట్"</b> యాప్ను డౌన్లోడ్ చేసి ఇన్స్టాల్ చేయండి.

@@ -8,7 +8,7 @@ weight: 2
 
 {{< notice "info">}}సర్వే మేనేజర్ సర్వే ఎగ్జిక్యూటివ్కు పంచాయతీని కేటాయించనున్నారు.{{< /notice>}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=T1MUbKndG" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=wnBcm7qPh" title="Panchayat Seva Video" >}}
 
 ### నావిగేషన్ 
 1. ఓపెన్ the  ను తెరవండి<b>మెను</b>డాష్బోర్డ్ స్క్రీన్ ఎగువ ఎడమూలలో ఉంటుంది.<br>

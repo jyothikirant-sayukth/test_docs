@@ -6,7 +6,7 @@ weight: 1
 # <u>Upload</U>
 To upload the records, you should have a Stable Internet Connection. After successfully creating the records, you need to upload them to the Panchayat Seva Cloud Server.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=RxDNwI2NU" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="020_country_or_manglore_tiles_ac_sheets_sbs" >}}
 
 ### Navigation
 1. Open the <b>Menu</b> on the top left corner of the Dashboard screen.<br>

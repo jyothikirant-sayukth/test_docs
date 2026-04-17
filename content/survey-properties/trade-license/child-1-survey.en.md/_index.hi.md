@@ -6,7 +6,7 @@ weight: 1
 # <u><b>ट्रेड लाइसेंस ट्रेड लाइसेंस</b></u>
 >एक ट्रेड लाइसेंस एक विशेष व्यवसाय शुरू करने की अनुमति देता है।
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=D3k5wP6yE" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=vMN6YIgSM" title="Panchayat Seva Video" >}}
 
 ### नेविगेशन
 1. अपना उपयोगकर्ता नाम और पासवर्ड दर्ज करें, फिर  पर क्लिक करें।<b>लॉगिन</b>बटन। बटन।

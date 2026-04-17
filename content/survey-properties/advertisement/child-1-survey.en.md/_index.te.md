@@ -6,7 +6,7 @@ weight: 1
 # <u>ప్రకటన</u>
 >ఒక ప్రకటన అనేది ఒక ఉత్పత్తి, సేవ లేదా సంఘటన గురించి ప్రచారం చేయడానికి ఒక ప్రకటన.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=SjQMiElA8" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=AvJnzfx73" title="Panchayat Seva Video" >}}
 
 ###  నావిగేషన్
 

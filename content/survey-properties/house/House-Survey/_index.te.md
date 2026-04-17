@@ -6,7 +6,7 @@ weight: 2
 # <u>హౌస్</u>
 >ఒక పంచాయతీలోని ఇల్లు అనేది ప్రజలు క్రమం తప్పకుండా నివసించే భవనం.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=Pb6Qlnjdd" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=jSZIrgEiL" title="Panchayat Seva Video" >}}
 
 ##  నావిగేషన్
 

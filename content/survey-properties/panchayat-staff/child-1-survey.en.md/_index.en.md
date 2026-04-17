@@ -6,7 +6,7 @@ weight: 1
 # <u><b>Panchayat Staff</b></u>
 > Panchayat Staff are the members who manage the services in a Panchayat.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=vlTxNxFqG" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=1dRVHUnAD" title="Panchayat Seva Video" >}}
 
 ### Navigation
 1. Enter your Username and Password, then click on the <b>Login</b> button.

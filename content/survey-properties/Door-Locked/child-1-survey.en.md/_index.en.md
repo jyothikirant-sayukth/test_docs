@@ -6,9 +6,9 @@ weight: 1
 ## <u><b>Door Locked</b></u>
 > A Door Locked Record is created when the owner is not available during the survey, and only limited details are collected. Once the owner is available, the full property details can be added and updated.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=8lwipjBnU" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=wnBcm7qPh" title="Panchayat Seva Video" >}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=eVVXdcur8" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=aSmyA2y7q" title="Panchayat Seva Video" >}}
 
 ### Navigation
 

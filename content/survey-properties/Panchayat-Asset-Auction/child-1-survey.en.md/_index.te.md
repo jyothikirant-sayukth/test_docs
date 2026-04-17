@@ -6,7 +6,7 @@ weight: 1
 # <u><b>పంచాయతీ ఆస్తి వేలం</b></u>
 >పంచాయతీ ఆస్తి వేలం అనేది పంచాయతీ కొన్ని ఆస్తులను మరియు అత్యధిక బిడ్డర్కు లీజుకు అందించే సేవలను నిర్వహించే అధికారిక ప్రక్రియను సూచిస్తుంది.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=MMuLy7hbm" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=8sxwcc1A8" title="Panchayat Seva Video" >}}
 
 ### నావిగేషన్
 1. మీ వినియోగదారు పేరు మరియు పాస్వర్డ్ను నమోదు చేసి, <b>లాగిన్</b> బటన్ను క్లిక్ చేయండి.

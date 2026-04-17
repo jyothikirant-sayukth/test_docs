@@ -6,7 +6,7 @@ weight: 1
 # <u><b>Trade License</b></u>
  >A Trade License provides permission to start a particular Business.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=D3k5wP6yE" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=vMN6YIgSM" title="Panchayat Seva Video" >}}
 
 ### Navigation
 1. Enter your Username and Password, then click on the <b>Login</b> button.

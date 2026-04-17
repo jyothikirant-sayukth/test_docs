@@ -6,7 +6,7 @@ weight: 3
 # <u>డేటా బ్యాకప్ అప్లోడ్</u>
 రిసీవర్ ఈ ఫీచర్ను ఉపయోగించి అందుకున్న రికార్డులను అప్లోడ్ చేయాలి.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=3WJml7cZQ" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=PeG1dPxHa" title="Panchayat Seva Video" >}}
 
 ## నావిగేషన్ 
 1. ఓపెన్ the  ను తెరవండి<b>మెను</b>డాష్బోర్డ్ స్క్రీన్ ఎగువ ఎడమూలలో ఉంటుంది.<br>

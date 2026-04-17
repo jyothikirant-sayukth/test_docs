@@ -2,9 +2,13 @@
 title: "Complete Survey"
 weight: 1
 ---
- #<u>Complete Survey</u>एक बार जब आप एक पंचायत में सर्वेक्षण को सफलतापूर्वक पूरा कर लेते हैं, तो आप  का उपयोग कर सकते हैं।<b>Complete Survey</b>यह एक और पंचायत में सर्वेक्षण शुरू करने के लिए सुविधा है।{{< notice "note" >}}सर्वेक्षण प्रबंधक आपको पंचायत सौंप देगा।{{< /notice>}}
+ # <u>Complete Survey</u>
+ 
+ एक बार जब आप एक पंचायत में सर्वेक्षण को सफलतापूर्वक पूरा कर लेते हैं, तो आप  का उपयोग कर सकते हैं।<b>Complete Survey</b>यह एक और पंचायत में सर्वेक्षण शुरू करने के लिए सुविधा है।{{< notice "note" >}}सर्वेक्षण प्रबंधक आपको पंचायत सौंप देगा।{{< /notice>}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=Q4Rb52ia4" title="Panchayat Seva Video" >}}## नेविगेशन 1.  पर क्लिक करें।<b>मेनू</b>डैशबोर्ड स्क्रीन के ऊपरी बाएं कोने में।<br>
+{{< mediacms uuid="004_upload_survey_data" >}}
+
+## नेविगेशन 1.  पर क्लिक करें।<b>मेनू</b>डैशबोर्ड स्क्रीन के ऊपरी बाएं कोने में।<br>
   {{< image src="images/House_images/dashboard_screen.jpg" alt="Alt text" width="250" height="550" class="img-center">}}<br> 1 का चयन करें।<b>पंचायत</b> से  से<b>मेनू</b>. .<br>
 {{< image src="images/navigation_images/panchayat_mb.jpg" alt="Alt text" width="250" height="450" class="img-center">}}<br>### पंचायत 1.  पर क्लिक करने के बाद<b>पंचायत</b>, आपको पंचायत स्क्रीन पर ले जाया जाएगा।<br>
 {{< image src="images/complete_survey_images/exit_panchayat.jpeg" alt="Alt text" width="250" height="600" class="img-center">}}#### विवरण अनुभाग इस अनुभाग में, आप पंचायत जानकारी और वर्तमान सर्वेक्षण गिनती देख पाएंगे। ###### पंचायत जानकारी यह सर्वेक्षण किए गए क्षेत्र के गांव, पंचायत, मंडल, डिवीजन, जिले को प्रदर्शित करेगा। ####### वर्तमान सर्वेक्षण गिनती 1. यह सभी संपत्तियों की व्यक्तिगत गिनती प्रदर्शित करेगा जो आपने अब तक पूरी की हैं।<br> 2 पर क्लिक करें।<b>Complete my Survey</b>एक और पंचायत में सर्वेक्षण शुरू करने के लिए बटन। आपको मेरी सर्वेक्षण पूरी करें स्क्रीन पर ले जाया जाएगा।<br>

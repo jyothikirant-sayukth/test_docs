@@ -5,7 +5,7 @@ weight: 1
 # <u>Registration</u>
 You should register into the Survey App to enroll as a Survey Executive.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=SnbIZTZap" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=uju6mQlGu" title="Panchayat Seva Video" >}}
     
 ### Navigation
 1. From the Login Screen, click on the <b>Register</b> and it moves to the Register screen.

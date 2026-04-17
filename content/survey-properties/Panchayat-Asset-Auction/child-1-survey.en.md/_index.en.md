@@ -6,7 +6,7 @@ weight: 1
 # <u><b>Panchayat Asset Auction</b></u>
 >An Panchayat Asset Auction refers to a formal process by which the Panchayat manages certain assets, and services offered for lease to the highest bidder.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=MMuLy7hbm" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=8sxwcc1A8" title="Panchayat Seva Video" >}}
 
 ### Navigation
 1. Enter your Username and Password, then click on the <b>Login</b> button.

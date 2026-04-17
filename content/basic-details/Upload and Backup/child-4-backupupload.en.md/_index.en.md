@@ -6,7 +6,7 @@ weight: 3
 # <u>Data Backup Upload</u>
 The Receiver should upload the received records by using this feature.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=3WJml7cZQ" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="036_katarusum" >}}
 
 ## Navigation 
 1. Open the <b>Menu</b> on the top left corner of the Dashboard screen.<br>

@@ -8,7 +8,7 @@ weight: 2
 
 {{< notice "info">}}सर्वेक्षण प्रबंधक सर्वेक्षण कार्यकारी को पंचायत सौंप देगा।{{< /notice>}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=T1MUbKndG" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=wnBcm7qPh" title="Panchayat Seva Video" >}}
 
 ### नेविगेशन 
  1 को खोलें।<b>मेनू</b>डैशबोर्ड स्क्रीन के ऊपरी बाएं कोने में।<br>

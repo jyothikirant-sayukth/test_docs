@@ -6,7 +6,7 @@ weight: 1
 # <u> లాగిన్</u>
 సర్వే ఎగ్జిక్యూటివ్స్ వారి ఆధారాలను ఉపయోగించి లాగిన్ అవుతారు.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=BmhBA1odz" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=aSmyA2y7q" title="Panchayat Seva Video" >}}
 
 ## నావిగేషన్
 APS పంచాయతీ సేవా అనువర్తనాన్ని తెరవండి, మరియు లాగిన్ పేజీ ప్రదర్శించబడుతుంది.<br>

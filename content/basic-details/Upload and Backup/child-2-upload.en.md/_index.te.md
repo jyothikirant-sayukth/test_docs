@@ -6,7 +6,7 @@ weight: 1
 # <u>Upload అప్లోడ్</U>
 రికార్డులను అప్లోడ్ చేయడానికి, మీకు స్థిరమైన ఇంటర్నెట్ కనెక్షన్ ఉండాలి. రికార్డులను విజయవంతంగా సృష్టించిన తర్వాత, మీరు వాటిని పంచాయతీ సేవా క్లౌడ్ సర్వర్కు అప్లోడ్ చేయాలి.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=RxDNwI2NU" title="Panchayat Seva Video" >}}
+{{< mediacms uuid="020_country_or_manglore_tiles_ac_sheets_sbs" >}}
 
 ### నావిగేషన్
 1. ఓపెన్ the  ను తెరవండి<b>మెను</b>డాష్బోర్డ్ స్క్రీన్ ఎగువ ఎడమూలలో ఉంటుంది.<br>

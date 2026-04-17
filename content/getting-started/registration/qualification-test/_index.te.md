@@ -6,7 +6,7 @@ weight: 3
 # <u>ట్రైనిఫై</u>
 సర్వే ఎగ్జిక్యూటివ్గా నమోదు చేసుకోవడానికి, ట్రైనిఫై పోర్టల్లో పరీక్షను ప్రయత్నించడం తప్పనిసరి.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=NvwLvHEaz" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=PeG1dPxHa" title="Panchayat Seva Video" >}}
 
 # నావిగేషన్
 1. <b>సర్వే యాప్</b> ను తెరిచి Register అని పిలుస్తారు. చేసుకోండి.

@@ -6,7 +6,7 @@ weight: 1
 # <u>Advertisement</u>
 >An Advertisement is an announcement to promote about a product, service or an event.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=SjQMiElA8" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=AvJnzfx73" title="Panchayat Seva Video" >}}
 
 ###  Navigation
 

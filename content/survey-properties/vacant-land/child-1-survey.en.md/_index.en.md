@@ -6,7 +6,7 @@ weight: 1
 # <u><b>Vacant Land</b></u>
 > Vacant Land means land that has no buildings and it is not being used.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=JdKt7Nl4k" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=K2kPW5HE1" title="Panchayat Seva Video" >}}
 
 ###  Navigation
 

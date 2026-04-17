@@ -7,7 +7,7 @@ weight: 1
 మీరు ఒక పంచాయతీలో సర్వేను విజయవంతంగా పూర్తి చేసిన తర్వాత, మరొక పంచాయతీలో సర్వేను ప్రారంభించడానికి మీరు <b> పూర్తి సర్వే</b> లక్షణాన్ని ఉపయోగించవచ్చు.
 {{< notice "note" >}}సర్వే మేనేజర్ మీకు పంచాయతీని కేటాయించనున్నారు.{{< /notice>}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=Q4Rb52ia4" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=vMN6YIgSM" title="Panchayat Seva Video" >}}
 
 ## నావిగేషన్
 1. డాష్బోర్డ్ స్క్రీన్ ఎగువ ఎడమూలలో ఉన్న <b> మెను </b> పై క్లిక్ చేయండి.<br>

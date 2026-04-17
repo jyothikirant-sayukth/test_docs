@@ -6,7 +6,7 @@ weight: 1
 # <u>రిజిస్ట్రేషన్</u>
 మీరు సర్వే ఎగ్జిక్యూటివ్గా నమోదు చేసుకోవడానికి సర్వే యాప్లో నమోదు చేసుకోవాలి.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=SnbIZTZap" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=uju6mQlGu" title="Panchayat Seva Video" >}}
     
 ### నావిగేషన్
 1. లాగిన్ స్క్రీన్ నుండి, <b> రిజిస్టర్ </b> పై క్లిక్ చేయండి మరియు అది రిజిస్టర్ స్క్రీన్కు వెళుతుంది.

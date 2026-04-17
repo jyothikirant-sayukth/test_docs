@@ -11,7 +11,7 @@ If you are unable to download the maps due to low internet connection or no inte
   <b>Receiver :</b> The person who will receive the GIS Maps from sender.
 {{< /notice >}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=DEIEmcg6F" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=4soD2J0Wi" title="Panchayat Seva Video" >}}
 
 
 ## Navigation

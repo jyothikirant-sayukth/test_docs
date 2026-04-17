@@ -6,7 +6,7 @@ weight: 1
 # <u><b> వాక్యంట్ ల్యాండ్</b></u>
 > ఖాళీ భూమి అంటే భవనాలు లేని, ఉపయోగించని భూమి.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=JdKt7Nl4k" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=K2kPW5HE1" title="Panchayat Seva Video" >}}
 
 ###  నావిగేషన్
 

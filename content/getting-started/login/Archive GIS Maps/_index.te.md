@@ -10,7 +10,7 @@ weight: 4
 <>రీసీవర్ : </b> పంపినవారి నుండి GIS మ్యాప్లను అందుకునే వ్యక్తి.
 {{< /notice >}}
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=DEIEmcg6F" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=4soD2J0Wi" title="Panchayat Seva Video" >}}
 
 
 ## నావిగేషన్

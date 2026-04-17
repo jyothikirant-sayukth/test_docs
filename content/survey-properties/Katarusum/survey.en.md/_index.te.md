@@ -6,7 +6,7 @@ weight: 1
 # <b><u>కాటారూమ్</u></b>
 >ఒకటారసుమ్ ఒక గ్రామ స్థాయి చిన్న తరహా పరిశ్రమ.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=3umRIcR8D" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=4soD2J0Wi" title="Panchayat Seva Video" >}}
 
 ###  నావిగేషన్
 1. మీ వినియోగదారు పేరు మరియు పాస్వర్డ్ను నమోదు చేసి, <b> లాగిన్</b> బటన్ను క్లిక్ చేయండి.

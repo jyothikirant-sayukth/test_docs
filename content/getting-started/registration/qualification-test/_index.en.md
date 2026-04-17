@@ -6,7 +6,7 @@ weight: 3
 # <u>Trainify</u>
 To Enroll as a Survey Executive, it is mandatory to attempt the exam in the Trainify Portal.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=NvwLvHEaz" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=PeG1dPxHa" title="Panchayat Seva Video" >}}
 
 # Navigation
 1. Open the <b>Survey App</b> and Register.  

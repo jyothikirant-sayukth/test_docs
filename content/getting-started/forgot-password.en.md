@@ -6,7 +6,7 @@ weight: 7
 # <u> Forgot Password</u>
 The <b>Forgot Password</b> feature helps you reset your password if you've forgotten it.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=Dboaf1p23" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=K2kPW5HE1" title="Panchayat Seva Video" >}}
 
 ## Navigation 
 1. Open the <b>Survey App</b>.   

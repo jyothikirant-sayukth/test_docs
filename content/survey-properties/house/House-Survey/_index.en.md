@@ -6,7 +6,7 @@ weight: 2
 # <u>House</u>
 >House in a panchayat is a building that people used to reside regularly.
 
-{{< mediacms url="https://media.panchayatseva.in/embed?m=Pb6Qlnjdd" title="Panchayat Seva Video" >}}
+{{< mediacms url="https://media.panchayatseva.in/embed?m=jSZIrgEiL" title="Panchayat Seva Video" >}}
 
 ##  Navigation
 
